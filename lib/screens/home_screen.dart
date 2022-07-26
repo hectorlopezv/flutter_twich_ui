@@ -24,11 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> pages = [
-    FeedScreen(),
-    GoLiveScreen(),
-    Container(
-      child: Text("Browser"),
-    )
+    const FeedScreen(),
+    const GoLiveScreen(),
+    const Text("Browser")
   ];
 
   @override
