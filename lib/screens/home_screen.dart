@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: pages[1],
+      body: pages[_page],
     );
   }
 }

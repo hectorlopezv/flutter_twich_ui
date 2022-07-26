@@ -2,7 +2,9 @@ import 'dart:typed_data';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:twich_ui_clone/screens/broadcast_screen.dart';
 import 'package:twich_ui_clone/utils/colors.dart';
+import 'package:twich_ui_clone/utils/fireStoreMethods.dart';
 import 'package:twich_ui_clone/utils/utisl.dart';
 import 'package:twich_ui_clone/widgets/custom_button.dart';
 import 'package:twich_ui_clone/widgets/custom_text_field.dart';
@@ -24,7 +26,19 @@ class _GoLiveScreenState extends State<GoLiveScreen> {
     super.dispose();
   }
 
-  Future<void> goLive() async {}
+  Future<void> goLive() async {
+    String channelId = await FireStoreMethods().startLiveStream(
+      context,
+      _customTextController.text,
+      image,
+    );
+
+    if (channelId.isNotEmpty) {
+      showSnackBar(context, "LiveStream has Started");
+      Navigator.pushNamed(context, BroadCast.routeName);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
