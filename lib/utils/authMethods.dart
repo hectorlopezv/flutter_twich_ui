@@ -10,6 +10,14 @@ class AuthMethods {
   final _userRef = FirebaseFirestore.instance.collection("users");
   final _auth = FirebaseAuth.instance;
 
+  Future<Map<String, dynamic>?> getCurrentUser(String? uid) async {
+    if (uid != null) {
+      final snap = await _userRef.doc(uid).get();
+      return snap.data();
+    }
+    return null;
+  }
+
   Future<bool> signUpUser({
     required BuildContext context,
     required String username,
@@ -32,6 +40,35 @@ class AuthMethods {
         Provider.of<UserProvider>(context, listen: false).setUser(user);
         return res;
       }
+      return res;
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+      showSnackBar(context, e.message!);
+      return res;
+    }
+  }
+
+  Future<bool> loginUser({
+    required BuildContext context,
+    required String password,
+    required String email,
+  }) async {
+    bool res = false;
+    try {
+      UserCredential cred = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (cred != null) {
+        final user = await getCurrentUser(
+          cred.user!.uid,
+        );
+
+        Provider.of<UserProvider>(context, listen: false)
+            .setUser(models.User.fromMap(user ?? {}));
+        res = true;
+      }
+
       return res;
     } on FirebaseAuthException catch (e) {
       print(e.message);

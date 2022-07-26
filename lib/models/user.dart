@@ -16,9 +16,9 @@ class User {
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
+  factory User.fromMap(Map<String, dynamic>? map) {
     return User(
-      uid: map['uid'] as String,
+      uid: map!['uid'] as String,
       username: map['username'] as String,
       email: map['email'] as String,
     );

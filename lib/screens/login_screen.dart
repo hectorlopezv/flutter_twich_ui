@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:twich_ui_clone/screens/home_screen.dart';
+import 'package:twich_ui_clone/utils/authMethods.dart';
 import 'package:twich_ui_clone/widgets/custom_button.dart';
 import 'package:twich_ui_clone/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';
-  const LoginScreen({Key? key}) : super(key: key);
+
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final AuthMethods _authMethods = AuthMethods();
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passWordController = TextEditingController();
+
+  void loginUser() async {
+    bool res = await _authMethods.loginUser(
+      context: context,
+      email: _emailController.text,
+      password: _passWordController.text,
+    );
+    if (res) {
+      Navigator.pushNamed(context, HomeScreen.routeName);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -54,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 20,
               ),
-              CustomButton(onPressed: () {}, text: "Login In"),
+              CustomButton(onPressed: loginUser, text: "Login In"),
             ],
           ),
         ),
