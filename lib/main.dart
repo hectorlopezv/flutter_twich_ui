@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:twich_ui_clone/screens/login_screen.dart';
 import 'package:twich_ui_clone/screens/onboarding_screen.dart';
+import 'package:twich_ui_clone/screens/signup_screen.dart';
 import 'package:twich_ui_clone/utils/colors.dart';
 
 void main() {
@@ -14,6 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Twich UI Clone',
+      routes: {
+        OnboardingScreen.routeName: (context) => OnboardingScreen(),
+        LoginScreen.routeName: (context) => LoginScreen(),
+        SignUpScreen.routeName: (context) => SignUpScreen(),
+      },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: backgroundColor,
         appBarTheme: AppBarTheme.of(context).copyWith(
