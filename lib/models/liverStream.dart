@@ -5,7 +5,7 @@ class LiveStream {
   final String image;
   final String uid;
   final String username;
-  final String startedAt;
+  final startedAt;
   final int viewers;
   final String channelId;
 

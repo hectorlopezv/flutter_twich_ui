@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:twich_ui_clone/models/user.dart' as model;
 import 'package:twich_ui_clone/providers/user_provider.dart';
-import 'package:twich_ui_clone/screens/broadcast_screen.dart';
 import 'package:twich_ui_clone/screens/home_screen.dart';
 import 'package:twich_ui_clone/screens/login_screen.dart';
 import 'package:twich_ui_clone/screens/onboarding_screen.dart';
@@ -41,7 +40,6 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (context) => LoginScreen(),
         SignUpScreen.routeName: (context) => SignUpScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
-        BroadCast.routeName: (context) => BroadCast(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: backgroundColor,

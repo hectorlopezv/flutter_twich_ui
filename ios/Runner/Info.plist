@@ -47,5 +47,9 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo For Thumbail</string>
+	<key>NSCamera</key>
+	<string>Camera for Live Stream permission</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microfone for Live Stream</string>
 </dict>
 </plist>
