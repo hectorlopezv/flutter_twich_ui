@@ -1,10 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:twich_ui_clone/screens/home_screen.dart';
 import 'package:twich_ui_clone/screens/login_screen.dart';
 import 'package:twich_ui_clone/screens/onboarding_screen.dart';
 import 'package:twich_ui_clone/screens/signup_screen.dart';
 import 'package:twich_ui_clone/utils/colors.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -20,6 +24,7 @@ class MyApp extends StatelessWidget {
         OnboardingScreen.routeName: (context) => OnboardingScreen(),
         LoginScreen.routeName: (context) => LoginScreen(),
         SignUpScreen.routeName: (context) => SignUpScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: backgroundColor,

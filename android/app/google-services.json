@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "651386915400",
+    "project_id": "flutter-twice-ui",
+    "storage_bucket": "flutter-twice-ui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651386915400:android:791feedab402473bbbe67d",
+        "android_client_info": {
+          "package_name": "com.example.twich_ui_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651386915400-7fbatnsfe4k5vnb9kg4li3fs9rkkb8ok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTS4B4qvJfSUPI-XDHjeVaNUVIJL8Mw4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651386915400-7fbatnsfe4k5vnb9kg4li3fs9rkkb8ok.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "651386915400-osg5ngoeti00jnkdlj8mjcp2c4anlqhs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.twichUiClone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
