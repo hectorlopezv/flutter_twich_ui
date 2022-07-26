@@ -18,6 +18,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passWordController = TextEditingController();
 
+@override
+  void dispose() {
+    // TODO: implement dispose
+    _emailController.dispose();
+    _passWordController.dispose();
+    super.dispose();
+  }
   void loginUser() async {
     bool res = await _authMethods.loginUser(
       context: context,

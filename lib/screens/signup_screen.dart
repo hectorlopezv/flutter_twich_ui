@@ -29,7 +29,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
       Navigator.pushNamed(context, HomeScreen.routeName);
     }
   }
-
+@override
+  void dispose() {
+    // TODO: implement dispose
+    _emailController.dispose();
+    _userNameController.dispose();
+    _passWordController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
